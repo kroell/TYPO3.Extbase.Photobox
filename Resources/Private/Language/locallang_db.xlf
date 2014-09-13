@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2014-09-13T23:10:59Z" product-name="sk_photobox">
+		<header/>
+		<body>
+			<trans-unit id="tx_skphotobox_domain_model_photobox">
+				<source>Photobox</source>
+			</trans-unit>
+			<trans-unit id="tx_skphotobox_domain_model_photobox.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_skphotobox_domain_model_photobox.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_skphotobox_domain_model_photobox.images">
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="tx_skphotobox_domain_model_image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_skphotobox_domain_model_image.thumb_image">
+				<source>Thumb Image</source>
+			</trans-unit>
+			<trans-unit id="tx_skphotobox_domain_model_image.big_image">
+				<source>Big Image</source>
+			</trans-unit>
+			<trans-unit id="tx_skphotobox_domain_model_image.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_skphotobox_domain_model_image.photobox">
+				<source>Photobox</source>
+			</trans-unit>
+			<trans-unit id="tx_skphotobox_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_skphotobox_domain_model_category.photobox">
+				<source>Photobox</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
