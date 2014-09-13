@@ -32,29 +32,81 @@ namespace SoerenKroell\SkPhotobox\Domain\Model;
 class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-	 * photobox
+	 * title
 	 *
-	 * @var \SoerenKroell\SkPhotobox\Domain\Model\Photobox
+	 * @var string
 	 */
-	protected $photobox = NULL;
+	protected $title = '';
 
 	/**
-	 * Returns the photobox
+	 * description
 	 *
-	 * @return \SoerenKroell\SkPhotobox\Domain\Model\Photobox $photobox
+	 * @var string
 	 */
-	public function getPhotobox() {
-		return $this->photobox;
+	protected $description = '';
+
+	/**
+	 * image
+	 *
+	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+	 */
+	protected $image = NULL;
+
+	/**
+	 * Returns the title
+	 *
+	 * @return string $title
+	 */
+	public function getTitle() {
+		return $this->title;
 	}
 
 	/**
-	 * Sets the photobox
+	 * Sets the title
 	 *
-	 * @param \SoerenKroell\SkPhotobox\Domain\Model\Photobox $photobox
+	 * @param string $title
 	 * @return void
 	 */
-	public function setPhotobox(\SoerenKroell\SkPhotobox\Domain\Model\Photobox $photobox) {
-		$this->photobox = $photobox;
+	public function setTitle($title) {
+		$this->title = $title;
+	}
+
+	/**
+	 * Returns the image
+	 *
+	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+	 */
+	public function getImage() {
+		return $this->image;
+	}
+
+	/**
+	 * Sets the image
+	 *
+	 * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+	 * @return void
+	 */
+	public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image) {
+		$this->image = $image;
+	}
+
+	/**
+	 * Returns the description
+	 *
+	 * @return string description
+	 */
+	public function getDescription() {
+		return $this->description;
+	}
+
+	/**
+	 * Sets the description
+	 *
+	 * @param string $description
+	 * @return string description
+	 */
+	public function setDescription($description) {
+		$this->description = $description;
 	}
 
 }

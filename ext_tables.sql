@@ -49,10 +49,9 @@ CREATE TABLE tx_skphotobox_domain_model_image (
 
 	photobox int(11) unsigned DEFAULT '0' NOT NULL,
 
-	thumb_image int(11) unsigned NOT NULL default '0',
-	big_image varchar(255) DEFAULT '' NOT NULL,
 	title varchar(255) DEFAULT '' NOT NULL,
-	photobox int(11) unsigned DEFAULT '0',
+	thumb_image int(11) unsigned NOT NULL default '0',
+	big_image int(11) unsigned NOT NULL default '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -91,7 +90,9 @@ CREATE TABLE tx_skphotobox_domain_model_category (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
-	photobox int(11) unsigned DEFAULT '0',
+	title varchar(255) DEFAULT '' NOT NULL,
+	description text NOT NULL,
+	image int(11) unsigned NOT NULL default '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -130,3 +131,5 @@ CREATE TABLE tx_skphotobox_domain_model_image (
 	photobox  int(11) unsigned DEFAULT '0' NOT NULL,
 
 );
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder

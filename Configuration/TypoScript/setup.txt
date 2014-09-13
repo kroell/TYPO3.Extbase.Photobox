@@ -47,3 +47,34 @@ plugin.tx_skphotobox._CSS_DEFAULT_STYLE (
 	}
 
 )
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+
+plugin.tx_skphotobox._CSS_DEFAULT_STYLE >
+
+
+page {
+	includeCSS {
+		photoBoxCss = EXT:sk_photobox/Resources/Public/Vendor/Photobox/photobox.css
+		photoBoxCssIE = EXT:sk_photobox/Resources/Public/Vendor/Photobox/photobox.ie.css
+		
+		mainCSS = EXT:sk_photobox/Resources/Public/Css/tx_skphotobox_main.css
+		#mainCSS.excludeFromConcatenation = 1
+		#mainCSS.disableCompression = 1
+		#mainCSS.external = 1
+	}
+	includeJS{
+		jquery = fileadmin/templates/js/jquery-1.11.0.min.js
+		photoboxJS = EXT:sk_photobox/Resources/Public/Vendor/Photobox/jquery.photobox.js
+		mainJS = EXT:sk_photobox/Resources/Public/JavaScript/tx_skphotobox_main.js
+	}
+	includeJSFooter{
+		#bootstrap = https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
+		#bootstrap.external = 1
+		
+		#google = http://maps.google.com/maps/api/js?v=3.2&amp;sensor=false
+		#google.excludeFromConcatenation = 1
+		#google.disableCompression = 1
+	}
+}

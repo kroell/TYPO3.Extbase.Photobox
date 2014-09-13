@@ -53,7 +53,7 @@
                             "propertyIsExcludeField": true,
                             "relationDescription": "",
                             "relationName": "category",
-                            "relationType": "zeroToOne",
+                            "relationType": "manyToOne",
                             "relationWire": "[wired]",
                             "uid": "1024609712205"
                         },
@@ -110,6 +110,16 @@
                             "propertyDescription": "",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
+                            "propertyName": "title",
+                            "propertyType": "String",
+                            "uid": "1358155678647"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
                             "propertyName": "thumbImage",
                             "propertyType": "Image",
                             "uid": "219668831671"
@@ -121,34 +131,13 @@
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "bigImage",
-                            "propertyType": "String",
+                            "propertyType": "Image",
                             "uid": "77720423074"
-                        },
-                        {
-                            "allowedFileTypes": "",
-                            "maxItems": "1",
-                            "propertyDescription": "",
-                            "propertyIsExcludeField": true,
-                            "propertyIsRequired": false,
-                            "propertyName": "title",
-                            "propertyType": "String",
-                            "uid": "1358155678647"
                         }
                     ]
                 },
                 "relationGroup": {
-                    "relations": [
-                        {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
-                            "propertyIsExcludeField": true,
-                            "relationDescription": "",
-                            "relationName": "photobox",
-                            "relationType": "zeroToOne",
-                            "relationWire": "[wired]",
-                            "uid": "512080520035"
-                        }
-                    ]
+                    "relations": []
                 }
             }
         },
@@ -184,21 +173,41 @@
                     "uid": "46996167079"
                 },
                 "propertyGroup": {
-                    "properties": []
-                },
-                "relationGroup": {
-                    "relations": [
+                    "properties": [
                         {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
                             "propertyIsExcludeField": true,
-                            "relationDescription": "",
-                            "relationName": "photobox",
-                            "relationType": "zeroToOne",
-                            "relationWire": "[wired]",
-                            "uid": "538694648564"
+                            "propertyIsRequired": false,
+                            "propertyName": "title",
+                            "propertyType": "String",
+                            "uid": "706562411160"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "description",
+                            "propertyType": "Text",
+                            "uid": "878854669125"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "image",
+                            "propertyType": "Image",
+                            "uid": "359949801207"
                         }
                     ]
+                },
+                "relationGroup": {
+                    "relations": []
                 }
             }
         }
@@ -233,7 +242,7 @@
                 "actions": {
                     "controllerActionCombinations": "",
                     "noncacheableActions": "",
-                    "switchableActions": "Photobox\nPhotobox->show"
+                    "switchableActions": "Photobox\nPhotobox->list"
                 },
                 "key": "photobox",
                 "name": "Photobox #SK"
@@ -265,34 +274,10 @@
                 "terminal": "SOURCES",
                 "uid": "672701090013"
             }
-        },
-        {
-            "src": {
-                "moduleId": 1,
-                "terminal": "relationWire_0",
-                "uid": "512080520035"
-            },
-            "tgt": {
-                "moduleId": 0,
-                "terminal": "SOURCES",
-                "uid": "687358478225"
-            }
-        },
-        {
-            "src": {
-                "moduleId": 2,
-                "terminal": "relationWire_0",
-                "uid": "538694648564"
-            },
-            "tgt": {
-                "moduleId": 0,
-                "terminal": "SOURCES",
-                "uid": "687358478225"
-            }
         }
     ],
     "log": {
-        "last_modified": "2014-09-13 11:11",
+        "last_modified": "2014-09-14 12:33",
         "extension_builder_version": "6.2.0",
         "be_user": "iD.SEVEN (1)"
     }

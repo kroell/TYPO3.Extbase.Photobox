@@ -32,6 +32,13 @@ namespace SoerenKroell\SkPhotobox\Domain\Model;
 class Image extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
+	 * title
+	 *
+	 * @var string
+	 */
+	protected $title = '';
+
+	/**
 	 * thumbImage
 	 *
 	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
@@ -41,23 +48,9 @@ class Image extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * bigImage
 	 *
-	 * @var string
+	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
 	 */
 	protected $bigImage = '';
-
-	/**
-	 * title
-	 *
-	 * @var string
-	 */
-	protected $title = '';
-
-	/**
-	 * photobox
-	 *
-	 * @var \SoerenKroell\SkPhotobox\Domain\Model\Photobox
-	 */
-	protected $photobox = NULL;
 
 	/**
 	 * Returns the thumbImage
@@ -76,25 +69,6 @@ class Image extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setThumbImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $thumbImage) {
 		$this->thumbImage = $thumbImage;
-	}
-
-	/**
-	 * Returns the bigImage
-	 *
-	 * @return string $bigImage
-	 */
-	public function getBigImage() {
-		return $this->bigImage;
-	}
-
-	/**
-	 * Sets the bigImage
-	 *
-	 * @param string $bigImage
-	 * @return void
-	 */
-	public function setBigImage($bigImage) {
-		$this->bigImage = $bigImage;
 	}
 
 	/**
@@ -117,22 +91,22 @@ class Image extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the photobox
+	 * Returns the bigImage
 	 *
-	 * @return \SoerenKroell\SkPhotobox\Domain\Model\Photobox $photobox
+	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference bigImage
 	 */
-	public function getPhotobox() {
-		return $this->photobox;
+	public function getBigImage() {
+		return $this->bigImage;
 	}
 
 	/**
-	 * Sets the photobox
+	 * Sets the bigImage
 	 *
-	 * @param \SoerenKroell\SkPhotobox\Domain\Model\Photobox $photobox
-	 * @return void
+	 * @param string $bigImage
+	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference bigImage
 	 */
-	public function setPhotobox(\SoerenKroell\SkPhotobox\Domain\Model\Photobox $photobox) {
-		$this->photobox = $photobox;
+	public function setBigImage($bigImage) {
+		$this->bigImage = $bigImage;
 	}
 
 }

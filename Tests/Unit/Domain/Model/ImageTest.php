@@ -51,6 +51,29 @@ class ImageTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
+	public function getTitleReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getTitle()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setTitleForStringSetsTitle() {
+		$this->subject->setTitle('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'title',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
 	public function getThumbImageReturnsInitialValueForFileReference() {
 		$this->assertEquals(
 			NULL,
@@ -75,9 +98,9 @@ class ImageTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getBigImageReturnsInitialValueForString() {
-		$this->assertSame(
-			'',
+	public function getBigImageReturnsInitialValueForFileReference() {
+		$this->assertEquals(
+			NULL,
 			$this->subject->getBigImage()
 		);
 	}
@@ -85,59 +108,13 @@ class ImageTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setBigImageForStringSetsBigImage() {
-		$this->subject->setBigImage('Conceived at T3CON10');
+	public function setBigImageForFileReferenceSetsBigImage() {
+		$fileReferenceFixture = new \TYPO3\CMS\Extbase\Domain\Model\FileReference();
+		$this->subject->setBigImage($fileReferenceFixture);
 
 		$this->assertAttributeEquals(
-			'Conceived at T3CON10',
+			$fileReferenceFixture,
 			'bigImage',
-			$this->subject
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function getTitleReturnsInitialValueForString() {
-		$this->assertSame(
-			'',
-			$this->subject->getTitle()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setTitleForStringSetsTitle() {
-		$this->subject->setTitle('Conceived at T3CON10');
-
-		$this->assertAttributeEquals(
-			'Conceived at T3CON10',
-			'title',
-			$this->subject
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function getPhotoboxReturnsInitialValueForPhotobox() {
-		$this->assertEquals(
-			NULL,
-			$this->subject->getPhotobox()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setPhotoboxForPhotoboxSetsPhotobox() {
-		$photoboxFixture = new \SoerenKroell\SkPhotobox\Domain\Model\Photobox();
-		$this->subject->setPhotobox($photoboxFixture);
-
-		$this->assertAttributeEquals(
-			$photoboxFixture,
-			'photobox',
 			$this->subject
 		);
 	}

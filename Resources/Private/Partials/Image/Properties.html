@@ -2,6 +2,14 @@
 <table class="tx-sk-photobox" >
 	<tr>
 		<td>
+			<f:translate key="tx_skphotobox_domain_model_image.title" />
+		</td>
+		<td>
+		{image.title}
+		</td>
+	</tr>
+	<tr>
+		<td>
 			<f:translate key="tx_skphotobox_domain_model_image.thumb_image" />
 		</td>
 		<td>
@@ -13,15 +21,7 @@
 			<f:translate key="tx_skphotobox_domain_model_image.big_image" />
 		</td>
 		<td>
-		{image.bigImage}
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<f:translate key="tx_skphotobox_domain_model_image.title" />
-		</td>
-		<td>
-		{image.title}
+				<f:image src="{image.bigImage.originalResource.publicUrl}" width="200"/>
 		</td>
 	</tr>
 </table>

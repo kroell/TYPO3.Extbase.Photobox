@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $GLOBALS['TCA']['tx_skphotobox_domain_model_category'] = array(
 	'ctrl' => $GLOBALS['TCA']['tx_skphotobox_domain_model_category']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, photobox',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, image',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, photobox, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, description, image, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -97,23 +97,35 @@ $GLOBALS['TCA']['tx_skphotobox_domain_model_category'] = array(
 			),
 		),
 
-		'photobox' => array(
+		'title' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:sk_photobox/Resources/Private/Language/locallang_db.xlf:tx_skphotobox_domain_model_category.photobox',
+			'label' => 'LLL:EXT:sk_photobox/Resources/Private/Language/locallang_db.xlf:tx_skphotobox_domain_model_category.title',
 			'config' => array(
-				'type' => 'inline',
-				'foreign_table' => 'tx_skphotobox_domain_model_photobox',
-				'minitems' => 0,
-				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
+		),
+		'description' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:sk_photobox/Resources/Private/Language/locallang_db.xlf:tx_skphotobox_domain_model_category.description',
+			'config' => array(
+				'type' => 'text',
+				'cols' => 40,
+				'rows' => 15,
+				'eval' => 'trim'
+			)
+		),
+		'image' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:sk_photobox/Resources/Private/Language/locallang_db.xlf:tx_skphotobox_domain_model_category.image',
+			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+				'image',
+				array('maxitems' => 1),
+				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
 			),
 		),
 		
 	),
 );
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder

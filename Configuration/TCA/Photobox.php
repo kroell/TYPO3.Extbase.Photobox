@@ -110,17 +110,10 @@ $GLOBALS['TCA']['tx_skphotobox_domain_model_photobox'] = array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:sk_photobox/Resources/Private/Language/locallang_db.xlf:tx_skphotobox_domain_model_photobox.category',
 			'config' => array(
-				'type' => 'inline',
+				'type' => 'select',
 				'foreign_table' => 'tx_skphotobox_domain_model_category',
 				'minitems' => 0,
 				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
 			),
 		),
 		'images' => array(
@@ -130,17 +123,73 @@ $GLOBALS['TCA']['tx_skphotobox_domain_model_photobox'] = array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_skphotobox_domain_model_image',
 				'foreign_field' => 'photobox',
+				'foreign_sortby' => 'crdate',
 				'maxitems'      => 9999,
+				'headerThumbnail' => 1,
 				'appearance' => array(
-					'collapseAll' => 0,
+					'collapseAll' => 1,
+					'newRecordLinkTitle' => 'Bild hinzufügen',
 					'levelLinksPosition' => 'top',
 					'showSynchronizationLink' => 1,
 					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
+					'showAllLocalizationLink' => 1,
+					'expandSingle' => 1,
+					'useSortable' => 1,
+					'enabledControls' => array(
+                        'info' => FALSE,
+                        'new' => FALSE,
+                        'dragdrop' => TRUE,
+                        'sort' => FALSE,
+                        'hide' => TRUE,
+                        'delete' => TRUE,
+                        'localize' => TRUE,
+					),
+                ),
 			),
 
 		),
 		
 	),
 );
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+
+
+$tempColumns = array(
+
+	'images' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:sk_photobox/Resources/Private/Language/locallang_db.xlf:tx_skphotobox_domain_model_photobox.images',
+			'config' => array(
+				'type' => 'inline',
+				'foreign_table' => 'tx_skphotobox_domain_model_image',
+				'foreign_field' => 'photobox',
+				'foreign_sortby' => 'crdate',
+				'maxitems'      => 9999,
+				'headerThumbnail' => 1,
+				'appearance' => array(
+					'collapseAll' => 1,
+					'levelLinksPosition' => 'top',
+					'showSynchronizationLink' => 1,
+					'showPossibleLocalizationRecords' => 1,
+					'showAllLocalizationLink' => 1,
+					'expandSingle' => 1,
+					'useSortable' => 1,
+					'enabledControls' => array(
+                        'info' => FALSE,
+                        'new' => FALSE,
+                        'dragdrop' => TRUE,
+                        'sort' => FALSE,
+                        'hide' => TRUE,
+                        'delete' => TRUE,
+                        'localize' => TRUE,
+                ),
+                ),
+			),
+
+		),
+);
+
+
+//\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAColumns('tx_skphotobox_domain_model_photobox', $tempColumns, 1);
+//\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('sys_language_uid;;;;1-1-1');

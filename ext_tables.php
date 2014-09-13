@@ -49,7 +49,7 @@ $GLOBALS['TCA']['tx_skphotobox_domain_model_photobox'] = array(
 $GLOBALS['TCA']['tx_skphotobox_domain_model_image'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:sk_photobox/Resources/Private/Language/locallang_db.xlf:tx_skphotobox_domain_model_image',
-		'label' => 'thumb_image',
+		'label' => 'title',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
@@ -67,7 +67,7 @@ $GLOBALS['TCA']['tx_skphotobox_domain_model_image'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'thumb_image,big_image,title,photobox,',
+		'searchFields' => 'title,thumb_image,big_image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Image.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_skphotobox_domain_model_image.gif'
 	),
@@ -78,7 +78,7 @@ $GLOBALS['TCA']['tx_skphotobox_domain_model_image'] = array(
 $GLOBALS['TCA']['tx_skphotobox_domain_model_category'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:sk_photobox/Resources/Private/Language/locallang_db.xlf:tx_skphotobox_domain_model_category',
-		'label' => 'photobox',
+		'label' => 'title',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
@@ -96,8 +96,9 @@ $GLOBALS['TCA']['tx_skphotobox_domain_model_category'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'photobox,',
+		'searchFields' => 'title,description,image,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Category.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_skphotobox_domain_model_category.gif'
 	),
 );
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder

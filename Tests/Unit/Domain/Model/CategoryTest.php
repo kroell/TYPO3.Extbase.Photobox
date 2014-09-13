@@ -51,23 +51,69 @@ class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getPhotoboxReturnsInitialValueForPhotobox() {
-		$this->assertEquals(
-			NULL,
-			$this->subject->getPhotobox()
+	public function getTitleReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getTitle()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setPhotoboxForPhotoboxSetsPhotobox() {
-		$photoboxFixture = new \SoerenKroell\SkPhotobox\Domain\Model\Photobox();
-		$this->subject->setPhotobox($photoboxFixture);
+	public function setTitleForStringSetsTitle() {
+		$this->subject->setTitle('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
-			$photoboxFixture,
-			'photobox',
+			'Conceived at T3CON10',
+			'title',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getDescriptionReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getDescription()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setDescriptionForStringSetsDescription() {
+		$this->subject->setDescription('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'description',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getImageReturnsInitialValueForFileReference() {
+		$this->assertEquals(
+			NULL,
+			$this->subject->getImage()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setImageForFileReferenceSetsImage() {
+		$fileReferenceFixture = new \TYPO3\CMS\Extbase\Domain\Model\FileReference();
+		$this->subject->setImage($fileReferenceFixture);
+
+		$this->assertAttributeEquals(
+			$fileReferenceFixture,
+			'image',
 			$this->subject
 		);
 	}

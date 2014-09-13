@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="messages" date="2014-09-13T23:10:59Z" product-name="sk_photobox">
+	<file source-language="de" datatype="plaintext" original="messages" date="2014-09-14T00:33:31Z" product-name="sk_photobox">
 		<header/>
 		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
 			<trans-unit id="thumb_image.description">
 				<source>thumbImage</source>
 			</trans-unit>
 			<trans-unit id="big_image.description">
 				<source>bigImage</source>
-			</trans-unit>
-			<trans-unit id="title.description">
-				<source>title</source>
 			</trans-unit>
 			<trans-unit id="photobox.description">
 				<source>photobox</source>

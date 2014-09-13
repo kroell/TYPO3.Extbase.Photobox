@@ -15,7 +15,7 @@
 								<items>
 									<numIndex index="0">
 										<numIndex index="0">Photobox</numIndex>
-										<numIndex index="1">Photobox->show</numIndex>
+										<numIndex index="1">Photobox->list</numIndex>
 									</numIndex>
 								</items>
 							</config>
