@@ -4,22 +4,27 @@
 
 <f:flashMessages renderMode="div" />
 
+	<f:if condition="<f:count subject='{photoboxes}' /> > 0">
 
-	<f:for each="{photoboxes}" as="photobox">
+		<f:render partial="Photobox/JavaScript" arguments="{settings: settings, data: data}"/>
 	
-		<div class="photobox-gallery">
+		<f:for each="{photoboxes}" as="photobox">
 		
-			<h1>{photobox.category.title}</h1>
-			<h3>{photobox.category.description}</h3>
-		
-			<f:for each="{photobox.images}" as="image">
-				<a href="{image.bigImage.originalResource.publicUrl}">
-					<img src="{image.thumbImage.originalResource.publicUrl}" title="{image.title}" width="200">
-				</a>
-			</f:for>
-		
-		</div>
-		
-	</f:for>
+			<div class="photobox-gallery">
+			
+				<h1>{photobox.category.title}</h1>
+				<h3>{photobox.category.description}</h3>
+			
+				<f:for each="{photobox.images}" as="image">
+					<a href="{image.bigImage.originalResource.publicUrl}">
+						<img src="{image.thumbImage.originalResource.publicUrl}" title="{image.title}" alt="{image.title}">
+					</a>
+				</f:for>
+			
+			</div>
+			
+		</f:for>
+	
+	</f:if>
 
 </f:section>

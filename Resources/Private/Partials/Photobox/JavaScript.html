@@ -1,0 +1,55 @@
+<script type="text/javascript">
+	var autoplay = <f:format.htmlentitiesDecode>{settings.autoplay}</f:format.htmlentitiesDecode>;
+	var showThumbnails = <f:format.htmlentitiesDecode>{settings.showThumbnails}</f:format.htmlentitiesDecode>;
+	var loop = <f:format.htmlentitiesDecode>{settings.loop}</f:format.htmlentitiesDecode>;
+	var timeAutoplay = <f:format.htmlentitiesDecode>{settings.timeAutoplay}</f:format.htmlentitiesDecode>;
+	if(!timeAutoplay){
+		timeAutoplay = 0;
+	}
+	
+	(function($) {
+
+		$(document).ready(function() {
+			
+			$('.photobox-gallery').photobox('a', { 
+				time: timeAutoplay, // time for autoplaying
+				thumbs: showThumbnails, // Show thumbs of all the images in the gallery at the bottom. Default: 'true'
+				autoplay: autoplay, // should the gallery autoplay on start or not. Default: 'false'
+				loop: loop, // Loop back to last image before the first one and to the first image after last one. Default: 'true'
+				counter: true, // Show the current image index position relative to the whole. Default: 'true'
+				history: true, // Enable/disable HTML5 history using hash urls. Default: 'true'
+				hideFlash: true, // Hide flash instances when viewing an image in the gallery. Default: 'true'
+				keys : {
+					close: "27, 88, 67",
+					prev: "37, 80",
+					next: "39, 78",
+				}
+			});
+			
+			// applying photobox on a `gallery` element which has lots of thumbnails links. Passing options object as well:
+			//-----------------------------------------------
+			//$('.photobox-gallery').photobox('a',{ time:0 });
+						
+			/*
+			// using a callback and a fancier selector
+			//----------------------------------------------
+			$('.photobox-gallery').photobox('li > a.family',{ time:0 }, callback);
+			function callback(){
+				console.log('image has been loaded');
+			}
+						
+			// destroy the plugin on a certain gallery:
+			//-----------------------------------------------
+			$('.photobox-gallery').photobox('destroy');
+						
+			// re-initialize the photbox DOM (does what Document ready does)
+			//-----------------------------------------------
+			$('.photobox-gallery').photobox('prepareDOM');			    
+			*/
+			
+		});
+		
+	})(jQuery);
+
+</script>
+

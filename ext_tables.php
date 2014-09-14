@@ -48,7 +48,7 @@ $GLOBALS['TCA']['tx_skphotobox_domain_model_photobox'] = array(
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_skphotobox_domain_model_image');
 $GLOBALS['TCA']['tx_skphotobox_domain_model_image'] = array(
 	'ctrl' => array(
-		'title'	=> 'LLL:EXT:sk_photobox/Resources/Private/Language/locallang_db.xlf:tx_skphotobox_domain_model_image',
+		'title'	=> 'LLL:EXT:sk_photobox/Resources/Private/Language/locallang_db.xlf:tx_skphotobox_domain_model_image.title',
 		'label' => 'title',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',

@@ -45,8 +45,9 @@ class PhotoboxController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 	 * @return void
 	 */
 	public function listAction() {
+		
 		$photoboxes = $this->photoboxRepository->findAll();
-		$this->view->assign('photoboxes', $photoboxes);
+		$this->view->assignMultiple(array('photoboxes'=> $photoboxes, 'settings' => $this->settings));
 	}
 
 	/**

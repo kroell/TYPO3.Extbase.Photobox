@@ -122,10 +122,10 @@ $GLOBALS['TCA']['tx_skphotobox_domain_model_photobox'] = array(
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_skphotobox_domain_model_image',
-				'foreign_field' => 'photobox',
+				'foreign_field' => 'photobox', // uid_foreign
 				'foreign_sortby' => 'crdate',
+				'foreign_label' => 'title',
 				'maxitems'      => 9999,
-				'headerThumbnail' => 1,
 				'appearance' => array(
 					'collapseAll' => 1,
 					'newRecordLinkTitle' => 'Bild hinzufügen',
@@ -135,6 +135,12 @@ $GLOBALS['TCA']['tx_skphotobox_domain_model_photobox'] = array(
 					'showAllLocalizationLink' => 1,
 					'expandSingle' => 1,
 					'useSortable' => 1,
+					'elementBrowserAllowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
+					'elementBrowserType' => 'file',
+					'headerThumbnail' => array(
+                        'width' => '45',
+                        'height' => '45c',
+					),
 					'enabledControls' => array(
                         'info' => FALSE,
                         'new' => FALSE,
@@ -146,6 +152,7 @@ $GLOBALS['TCA']['tx_skphotobox_domain_model_photobox'] = array(
 					),
                 ),
 			),
+			$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
 
 		),
 		
@@ -166,15 +173,20 @@ $tempColumns = array(
 				'foreign_field' => 'photobox',
 				'foreign_sortby' => 'crdate',
 				'maxitems'      => 9999,
-				'headerThumbnail' => 1,
 				'appearance' => array(
 					'collapseAll' => 1,
+					'newRecordLinkTitle' => 'Bild hinzufügen',
 					'levelLinksPosition' => 'top',
 					'showSynchronizationLink' => 1,
 					'showPossibleLocalizationRecords' => 1,
 					'showAllLocalizationLink' => 1,
 					'expandSingle' => 1,
 					'useSortable' => 1,
+					'headerThumbnail' => array(
+                        'field' => 'uid',
+                        'width' => '45',
+                        'height' => '45c',
+					),
 					'enabledControls' => array(
                         'info' => FALSE,
                         'new' => FALSE,
@@ -183,7 +195,7 @@ $tempColumns = array(
                         'hide' => TRUE,
                         'delete' => TRUE,
                         'localize' => TRUE,
-                ),
+					),
                 ),
 			),
 

@@ -21,6 +21,45 @@
 							</config>
 						</TCEforms>
 					</switchableControllerActions>
+					<settings.showThumbnails>
+				      <TCEforms>
+					    <exclude>1</exclude>
+						<label>Thumbnails anzeigen</label>
+						<config>
+						  <type>check</type>
+						</config>
+					  </TCEforms>
+					</settings.showThumbnails>
+					<settings.loop>
+				      <TCEforms>
+					    <exclude>1</exclude>
+						<label>Loop</label>
+						<config>
+						  <type>check</type>
+						</config>
+					  </TCEforms>
+					</settings.loop>
+					<settings.autoplay>
+				      <TCEforms>
+					    <exclude>1</exclude>
+						<label>Autoplay</label>
+						<config>
+						  <type>check</type>
+						</config>
+					  </TCEforms>
+					</settings.autoplay>
+					<settings.timeAutoplay>
+				      <TCEforms>
+					    <exclude>1</exclude>
+						<label>Autoplay Geschwindigkeit (ms)</label>
+						<config>
+						  <type>input</type>
+						  <size>20</size>
+						  <max>30</max>
+						  <eval>trim</eval>
+						</config>
+					  </TCEforms>
+					</settings.timeAutoplay>
 				</el>
 			</ROOT>
 		</sDEF>
